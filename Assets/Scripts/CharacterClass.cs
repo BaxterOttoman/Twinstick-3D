@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterClass : MonoBehaviour {
-    ToolClass tool;
     public bool Grounded;
     public float MovementSpeed;
 
@@ -42,7 +41,7 @@ public class CharacterClass : MonoBehaviour {
         switch (action)
         {
             case Action.Shoot:
-                Shoot();
+                //Shoot();
                 break;
 
             default:
@@ -58,11 +57,6 @@ public class CharacterClass : MonoBehaviour {
         {
             transform.Translate(hit.point + Vector3.up - transform.position);
         }
-    }
-
-    private void Shoot()
-    {
-        tool.Use();
     }
 
     public enum Action

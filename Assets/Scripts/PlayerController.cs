@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : CharacterClass
 {
     public GameObject projectile;
+
     private Transform shootpoint;
     private Rigidbody rb;
     private Quaternion aimAngle;
@@ -19,7 +20,7 @@ public class PlayerController : CharacterClass
     void FixedUpdate()
     {
         if (Input.GetButton("Fire1"))
-            Act(Action.Shoot);
+            Shoot();
 
         Plane aimPlane = new Plane(Vector3.up, transform.position);
 
@@ -60,7 +61,12 @@ public class PlayerController : CharacterClass
             aimPoint = new Vector3(Input.GetAxis("Horizontal2"), 0, Input.GetAxis("Vertical2")) + transform.position;
             Debug.DrawLine(transform.position, aimPoint);
             aimAngle = Quaternion.LookRotation(aimPoint - transform.position);
-            Act(Action.Shoot);
+            Shoot();
         }
+    }
+
+    private void Shoot()
+    {
+        Instantiate(projectile, shootpoint.transform.position, shootpoint.transform.rotation).GetComponent<Rigidbody>().AddForce(shootpoint.forward * 50, ForceMode.Impulse);
     }
 }
