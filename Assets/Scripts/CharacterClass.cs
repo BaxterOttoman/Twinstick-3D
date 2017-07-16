@@ -52,7 +52,6 @@ public class CharacterClass : MonoBehaviour {
     private void BeGrounded()
     {
         RaycastHit hit;
-        Ray headRay = new Ray(transform.position + Vector3.up, Vector3.down);
         if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out hit, float.PositiveInfinity, 1 << 8))
         {
             transform.Translate(hit.point + Vector3.up - transform.position);

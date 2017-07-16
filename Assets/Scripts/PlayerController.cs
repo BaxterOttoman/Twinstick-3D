@@ -3,9 +3,7 @@ using System.Collections;
 
 public class PlayerController : CharacterClass
 {
-    public GameObject projectile;
-
-    private Transform shootpoint;
+    public ToolClass tool;
     private Rigidbody rb;
     private Quaternion aimAngle;
     private Vector3 aimPoint;
@@ -13,8 +11,6 @@ public class PlayerController : CharacterClass
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        shootpoint = transform.Find("BulletHole");
     }
 
     void FixedUpdate()
@@ -67,6 +63,6 @@ public class PlayerController : CharacterClass
 
     private void Shoot()
     {
-        Instantiate(projectile, shootpoint.transform.position, shootpoint.transform.rotation).GetComponent<Rigidbody>().AddForce(shootpoint.forward * 50, ForceMode.Impulse);
+        tool.Use();
     }
 }
