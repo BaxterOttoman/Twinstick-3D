@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerController : CharacterClass
 {
     public GameObject projectile;
-
     private Transform shootpoint;
     private Rigidbody rb;
     private Quaternion aimAngle;

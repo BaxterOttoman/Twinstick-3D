@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterClass : MonoBehaviour {
+    ToolClass tool;
     public bool Grounded;
     public float MovementSpeed;
 
@@ -61,7 +62,7 @@ public class CharacterClass : MonoBehaviour {
 
     private void Shoot()
     {
-        Instantiate(projectile, shootpoint.transform.position, shootpoint.transform.rotation).GetComponent<Rigidbody>().AddForce(shootpoint.forward * 50, ForceMode.Impulse);
+        tool.Use();
     }
 
     public enum Action
