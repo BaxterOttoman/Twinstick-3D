@@ -14,6 +14,7 @@ public class TerrainGenerator : MonoBehaviour {
 	private void Generate () {
 		Mesh mesh = GetComponent<MeshFilter>().mesh = new Mesh();
 
+        float leftShift = 0.0f - (xSize / 2.0f);
 		Vector3[] vertices = new Vector3[(xSize + 1) * (ySize + 1)];
 		for (int i = 0, y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++, i++) {
@@ -26,29 +27,12 @@ public class TerrainGenerator : MonoBehaviour {
 					westHeight = vertices [i - 1].y;
 					}
 				float heightChange = Random.Range (-0.5f, 0.5f);
-				float height = (northHeight + westHeight) / 2 + heightChange;
+                float height = (northHeight + westHeight) / 2 + heightChange;
 
-                float left = x * 2 - xSize;
-                if (y % 4 == 0)
-                {
-                    //left = left - 0.5f;
-                }
-                else if (y % 3 == 0)
-                { 
-                    //left = left + 0.5f;
-                }
-                else if (y % 2 == 0)
-                {
-                    //left = left + 0.5f;
-                }
-                else
-                {
-                    //left = left - 0.5f;
-                }
-
-                vertices[i] = new Vector3(left, height, y*2 - ySize);
-			}
-		}
+                vertices[i] = new Vector3(x * 2 - xSize + leftShift, height, y*2 - ySize);
+            }
+            leftShift += 1.0f;
+        }
 		int[] triangles = new int[xSize * ySize * 6];
 		for (int ti = 0, vi = 0, y = 0; y < ySize; y++, vi++) {
 			for (int x = 0; x < xSize; x++, ti += 6, vi++) {
