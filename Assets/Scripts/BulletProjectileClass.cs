@@ -10,7 +10,8 @@ public class BulletProjectileClass : ProjectileClass
 
     void OnCollisionEnter(Collision collison)
     {
-        if (collison.gameObject.tag == "Enemy") {
+        if (collison.gameObject.tag == "Enemy")
+        {
             collison.gameObject.GetComponent<NPCClass>().Die();
         }
         Destroy(gameObject, OnHitLifespan);
