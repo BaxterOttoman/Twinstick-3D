@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCController : MonoBehaviour {
     public List<GameObject> NPCTypess = new List<GameObject>();
     private List<GameObject> NPCs = new List<GameObject>();
+    private long ticks;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +28,10 @@ public class NPCController : MonoBehaviour {
             {
                 return; //DEVOURED BY TAE
             }
-            NPCs.Add(npcClass.SpawnAction());
+            if (ticks++ % npcClass.TicksPerSpawn == 0)
+            {
+                NPCs.Add(npcClass.SpawnAction());
+            }
         }
     }
 
