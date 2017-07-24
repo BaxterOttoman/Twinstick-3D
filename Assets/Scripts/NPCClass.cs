@@ -42,8 +42,14 @@ public class NPCClass : CharacterClass {
         Debug.Log("X: " + relativeZ);
         position.x = position.x + relativeX;
         position.z = position.z + relativeZ;
-        Instantiate(gameObject, position, new Quaternion());
-        BeGrounded();
+        GameObject npc = Instantiate(gameObject, position, new Quaternion());
+
+        NPCClass npcClass = npc.GetComponent<NPCClass>();
+        if (npcClass == null)
+        {
+            return; //DEVOURED BY TAE
+        }
+        npcClass.BeGrounded();
     }
 
     private void Normalize(ref float x, ref float y)
