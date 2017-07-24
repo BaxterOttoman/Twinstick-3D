@@ -64,7 +64,7 @@ public class NPCClass : CharacterClass {
 
     }
 
-    public void MoveAction()
+    public virtual void MoveAction()
     {
         switch (MovementType)
         {
