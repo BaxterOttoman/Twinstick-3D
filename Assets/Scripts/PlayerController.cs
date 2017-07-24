@@ -10,7 +10,7 @@ public class PlayerController : CharacterClass
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
