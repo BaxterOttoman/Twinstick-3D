@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab6b1c6d1c31d049b441475da4dfc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grounded: 0
+  Grounded: 1
   MovementSpeed: 10
   MovementType: 0
   SpawnType: 0
