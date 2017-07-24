@@ -8,8 +8,11 @@ public class BulletProjectileClass : ProjectileClass
     public float DefaultLifespan = 60f;
     public float OnHitLifespan = 2f;
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision collison)
     {
+        if (collison.gameObject.tag == "Enemy") {
+            collison.gameObject.GetComponent<NPCClass>().Die();
+        }
         Destroy(gameObject, OnHitLifespan);
     }
 
