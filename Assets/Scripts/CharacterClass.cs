@@ -23,7 +23,7 @@ public class CharacterClass : MonoBehaviour {
 
     public void Die()
     {
-
+        Destroy(gameObject);
     }
 
     public void Move(Vector3 direction)
