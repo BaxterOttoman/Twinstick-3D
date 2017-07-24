@@ -28,6 +28,7 @@ public class CharacterClass : MonoBehaviour {
 
     public void Move(Vector3 direction)
     {
+        direction.Normalize();
         transform.Translate(direction * MovementSpeed * Time.deltaTime, Space.World);
 
         if (Grounded)
