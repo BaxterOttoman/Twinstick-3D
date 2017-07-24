@@ -6,7 +6,7 @@ public class NPCClass : CharacterClass {
     public Movement MovementType;
     public Spawn SpawnType;
 
-    private const float NEARSPAWNDISTANCE = 10.0f;
+    private const float NEARSPAWNDISTANCE = 30.0f;
 
 	// Use this for initialization
 	void Start () {
