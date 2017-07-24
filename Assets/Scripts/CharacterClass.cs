@@ -49,7 +49,7 @@ public class CharacterClass : MonoBehaviour {
         }
     }
 
-    private void BeGrounded()
+    internal void BeGrounded()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out hit, float.PositiveInfinity, 1 << 8))
