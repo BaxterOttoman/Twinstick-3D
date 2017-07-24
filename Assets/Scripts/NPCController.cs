@@ -39,6 +39,10 @@ public class NPCController : MonoBehaviour {
     {
         foreach (GameObject npc in NPCs)
         {
+            if(npc == null)
+            {
+                return; //ALREADY EATEN BY TAE
+            }
             NPCClass npcClass = npc.GetComponent<NPCClass>();
             if (npcClass == null)
             {
