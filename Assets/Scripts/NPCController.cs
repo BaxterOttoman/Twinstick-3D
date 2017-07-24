@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCController : MonoBehaviour {
-    public List<GameObject> NPCTypess = new List<GameObject>();
+    public List<GameObject> NPCTypes = new List<GameObject>();
     private List<GameObject> NPCs = new List<GameObject>();
     private long ticks;
 
@@ -21,7 +21,7 @@ public class NPCController : MonoBehaviour {
 
     private void SpawnNPCs()
     {
-        foreach(GameObject npc in NPCTypess)
+        foreach(GameObject npc in NPCTypes)
         {
             NPCClass npcClass = npc.GetComponent<NPCClass>();
             if(npcClass == null)
