@@ -21,6 +21,7 @@ public class NPCController : MonoBehaviour {
 
     private void SpawnNPCs()
     {
+        if(GameObject.FindGameObjectWithTag("Player") == null) { return; }
         foreach(GameObject npc in NPCTypes)
         {
             NPCClass npcClass = npc.GetComponent<NPCClass>();
@@ -39,6 +40,7 @@ public class NPCController : MonoBehaviour {
     {
         foreach (GameObject npc in NPCs)
         {
+            if (GameObject.FindGameObjectWithTag("Player") == null) { return; }
             if (npc != null)
             {
                 NPCClass npcClass = npc.GetComponent<NPCClass>();
