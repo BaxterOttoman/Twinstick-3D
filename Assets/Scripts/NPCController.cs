@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCController : MonoBehaviour {
-    public List<GameObject> NPCs = new List<GameObject>();
-
+    public List<GameObject> NPCTypess = new List<GameObject>();
+    private List<GameObject> NPCs = new List<GameObject>();
 
 	// Use this for initialization
 	void Start () {
@@ -20,14 +20,14 @@ public class NPCController : MonoBehaviour {
 
     private void SpawnNPCs()
     {
-        foreach(GameObject npc in NPCs)
+        foreach(GameObject npc in NPCTypess)
         {
             NPCClass npcClass = npc.GetComponent<NPCClass>();
             if(npcClass == null)
             {
                 return; //DEVOURED BY TAE
             }
-            npcClass.SpawnAction();
+            NPCs.Add(npcClass.SpawnAction());
         }
     }
 
@@ -40,6 +40,7 @@ public class NPCController : MonoBehaviour {
             {
                 return; //DEVOURED BY TAE
             }
+
             npcClass.MoveAction();
         }
     }

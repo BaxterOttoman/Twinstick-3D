@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9b6848b80dce14aa7a4a98d0349332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPCs:
+  NPCTypess:
   - {fileID: 1750227006876836, guid: 5ecc386094a6f9444b5dfe257c8dc1e4, type: 2}
 --- !u!4 &1366686173
 Transform:

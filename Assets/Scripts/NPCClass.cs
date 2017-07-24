@@ -17,22 +17,23 @@ public class NPCClass : CharacterClass {
 	void Update () {
     }
 
-    public void SpawnAction()
+    public GameObject SpawnAction()
     {
         switch(SpawnType)
         {
             case Spawn.NearPlayer:
-                SpawnNearPlayer();
-                break;
+                return SpawnNearPlayer();
         }
+
+        return null;
     }
 
-    private void SpawnNearPlayer()
+    private GameObject SpawnNearPlayer()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            return; //They're eating her and then they're going to eat me oh my goooooooooooooooooooooooooooooooooooooooooooooood
+            return null; //They're eating her and then they're going to eat me oh my goooooooooooooooooooooooooooooooooooooooooooooood
         }
         Vector3 position = player.transform.position;
         float relativeX = Random.Range(-1.0f, 1.0f);
@@ -47,9 +48,10 @@ public class NPCClass : CharacterClass {
         NPCClass npcClass = npc.GetComponent<NPCClass>();
         if (npcClass == null)
         {
-            return; //DEVOURED BY TAE
+            return npc; //DEVOURED BY TAE
         }
         npcClass.BeGrounded();
+        return npc;
     }
 
     private void Normalize(ref float x, ref float y)
