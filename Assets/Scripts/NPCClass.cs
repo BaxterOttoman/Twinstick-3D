@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCClass : CharacterClass {
     public Movement MovementType;
     public Spawn SpawnType;
-    internal int TicksPerSpawn = 5;
+    internal int TicksPerSpawn = 10;
 
     private const float NEARSPAWNDISTANCE = 30.0f;
 

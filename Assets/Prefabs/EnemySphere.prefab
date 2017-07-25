@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grounded: 1
-  MovementSpeed: 10
+  MovementSpeed: 11
   MovementType: 0
   SpawnType: 0
 --- !u!135 &135996888393178868
