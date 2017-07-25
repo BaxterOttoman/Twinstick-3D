@@ -21,7 +21,7 @@ public class CharacterClass : MonoBehaviour {
 
     }
 
-    public void Die()
+    public virtual void Die()
     {
         Destroy(gameObject);
     }

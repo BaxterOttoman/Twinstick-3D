@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - DeathText
+  - Score
   layers:
   - Default
   - TransparentFX
